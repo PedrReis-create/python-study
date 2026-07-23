@@ -1,1 +1,7 @@
-See all my Python studies in this repository, organized into folders according to the subject.
+# Study Python
+
+My daily Python studies
+
+## Observation
+The exercises in this repository are in Portuguese. (pt-BR)
+
