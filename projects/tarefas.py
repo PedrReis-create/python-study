@@ -1,33 +1,50 @@
-import sys
 
 tarefas = []
+
+def adicionar_tarefa(tarefas):
+    titulo = input("Digite a tarefa que deseja adicionar: ")
+
+    if titulo in tarefas:
+        print("Essa tarefa já existe.")
+    else:
+        tarefas.append(titulo)
+        print("Tarefa adicionada com sucesso!")
+
+def ver_tarefas(tarefas):
+    if not tarefas:
+        print("Você ainda não tem tarefas cadastradas.")
+    else:
+        print("\nSuas tarefas:")
+        for tarefa in tarefas:
+            print(f"- {tarefa}")
+
+def mostrar_menu():
+    print("\n===== GERENCIADOR DE TAREFAS =====")
+    print("1 - Adicionar tarefa")
+    print("2 - Ver tarefas")
+    print("3 - Sair")
+
 def menu_sistema():
-    def adicionar_tarefa(tarefas):
-        titulo = input('Digite a tarefa que você deseja adicionar: ')
-        if titulo in tarefas:
-            pass
-        else:
-            tarefas.append(titulo)
-        return tarefas
-
-
-    def ver_tarefas(tarefas):
-        print(tarefas)
-
-    ##MENU##
     while True:
-        def menu():
-            escolha = int(input("Deseja adicionar uma tarefa(1), ver suas tarefas(2) ou sair do programa(3)?: "))
-            
-            if escolha == 1:
-                adicionar_tarefa(tarefas)
-            if escolha == 2:
-                ver_tarefas(tarefas)
-            if escolha == 3:
-                print("Obrigado por usar o nosso sistema!")
-                sys.exit()
-            else:
-                print("Escolha errada!")
-                sys.exit()
-    menu()
+        mostrar_menu()
+
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == "1":
+            adicionar_tarefa(tarefas)
+
+        elif escolha == "2":
+            ver_tarefas(tarefas)
+
+        elif escolha == "3":
+            print("Obrigado por usar o nosso sistema!")
+            break
+
+        else:
+            print("Opção inválida. Tente novamente.")
+
+    print("Programa encerrado.")
+
 menu_sistema()
+
+
