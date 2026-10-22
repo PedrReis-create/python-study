@@ -1,3 +1,4 @@
+from database import cadastrar_tarefa
 
 tarefas = []
 
