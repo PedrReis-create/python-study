@@ -48,3 +48,27 @@ def cadastrar_tarefa(tarefa):
     conexao.close()
 
     return True
+
+
+def listar_tarefas():
+    conexao = None
+    cursor = None
+
+    try:
+        conexao = conectar()
+        cursor = conexao.cursor()
+
+        cursor.execute('SELECT * FROM tarefas')
+        tarefas = cursor.fetchall()
+
+        return tarefas
+
+    except mysql.connector.Error:
+        return None
+
+    finally:
+        if cursor is not None:
+            cursor.close()
+
+        if conexao is not None and conexao.is_connected():
+            conexao.close()
