@@ -12,7 +12,7 @@ def menu_sistema():
 
 
     def ver_tarefas(tarefas):
-        return tarefas
+        print(tarefas)
 
     ##MENU##
     while True:
@@ -25,6 +25,9 @@ def menu_sistema():
                 ver_tarefas(tarefas)
             if escolha == 3:
                 print("Obrigado por usar o nosso sistema!")
+                sys.exit()
+            else:
+                print("Escolha errada!")
                 sys.exit()
     menu()
 menu_sistema()
