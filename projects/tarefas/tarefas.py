@@ -1,4 +1,8 @@
+
+# -*- coding: utf-8 -*-
+
 from database import cadastrar_tarefa, listar_tarefas
+
 
 def adicionar_tarefa():
     titulo = input("Digite a tarefa que deseja adicionar: ").strip()
@@ -6,15 +10,15 @@ def adicionar_tarefa():
     if not titulo:
         print("O título não pode ficar vazio.")
         return
-    
+
     resultado = cadastrar_tarefa(titulo)
-    
+
     if resultado is True:
         print("Tarefa adicionada com sucesso!")
-    
+
     elif resultado is False:
         print("Essa tarefa já existe!")
-    
+
     else:
         print(resultado)
 
@@ -42,6 +46,7 @@ def mostrar_menu():
     print("2 - Ver tarefas")
     print("3 - Sair")
 
+
 def menu_sistema():
     while True:
         mostrar_menu()
@@ -63,5 +68,6 @@ def menu_sistema():
 
     print("Programa encerrado.")
 
-menu_sistema()
 
+if __name__ == "__main__":
+    menu_sistema()
